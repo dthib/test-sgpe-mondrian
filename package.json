@@ -1,0 +1,66 @@
+{
+  "name": "mondrian-treemap",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "homepage": "https://gitlab.com/terristory/sgpe-mondrian",
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.com/terristory/sgpe-mondrian/mondrian-treemap.git"
+  },
+  "bugs": {
+    "url": "https://gitlab.com/terristory/sgpe-mondrian/issues"
+  },
+  "scripts": {
+    "build": "tsc && vite build",
+    "build:demo": "vite build --config vite.demo.config.ts",
+    "dev": "vite",
+    "test": "jest",
+    "test:unit": "jest --testPathPattern=tests/unit",
+    "test:coverage": "jest --coverage",
+    "test:watch": "jest --watch",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "react",
+    "treemap",
+    "echarts",
+    "visualization",
+    "mondrian",
+    "snbc",
+    "carbon",
+    "climate",
+    "data-viz"
+  ],
+  "author": "",
+  "license": "ISC",
+  "description": "A standalone Mondrian treemap visualization module for displaying SNBC trajectory data",
+  "peerDependencies": {
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0"
+  },
+  "dependencies": {
+    "echarts": "^5.6.0",
+    "echarts-for-react": "^3.0.2"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.7.0",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/jest": "^29.5.14",
+    "@types/react": "^19.1.9",
+    "@types/react-dom": "^19.1.7",
+    "@vitejs/plugin-react": "^4.2.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^29.5.0",
+    "jest-environment-jsdom": "^29.5.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "ts-jest": "^29.1.0",
+    "typescript": "^5.9.2",
+    "vite": "^7.1.1"
+  }
+}
