@@ -1,149 +1,149 @@
 /* Demo Application Styles */
 
 .demo-container {
-  background: linear-gradient(120deg, #f8fafc 0%, #e3f2fd 100%);
-  min-height: 100vh;
-  font-family: Arial, sans-serif;
+    background: linear-gradient(120deg, #f8fafc 0%, #e3f2fd 100%);
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
 }
 
 .demo-content {
-  max-width: 1200px;
-  margin: 40px auto;
-  padding: 0 20px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
 }
 
 .demo-title {
-  font-weight: 800;
-  font-size: 28px;
-  color: #1a237e;
-  letter-spacing: 0.5px;
-  margin-bottom: 8px;
+    font-weight: 800;
+    font-size: 28px;
+    color: #1a237e;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
 }
 
 .demo-subtitle {
-  margin-bottom: 24px;
-  color: #37474f;
+    margin-bottom: 24px;
+    color: #37474f;
 }
 
 .demo-controls {
-  margin-bottom: 24px;
-  padding: 18px 20px;
-  background: #f8f9fa;
-  border-radius: 10px;
-  border: 1.5px solid #dee2e6;
-  box-shadow: 0 1px 6px rgba(33, 150, 243, 0.04);
+    margin-bottom: 24px;
+    padding: 18px 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    border: 1.5px solid #dee2e6;
+    box-shadow: 0 1px 6px rgba(33, 150, 243, 0.04);
 }
 
 .demo-controls h4 {
-  color: #1976d2;
-  font-weight: 700;
-  margin-bottom: 12px;
+    color: #1976d2;
+    font-weight: 700;
+    margin-bottom: 12px;
 }
 
 .demo-controls-row {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 .demo-control-group {
-  flex: 1;
-  min-width: 200px;
+    flex: 1;
+    min-width: 200px;
 }
 
 .demo-control-group label {
-  display: block;
-  margin-bottom: 6px;
-  font-weight: 500;
-  color: #37474f;
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+    color: #37474f;
 }
 
 .demo-control-group select {
-  width: 100%;
-  padding: 8px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  font-size: 14px;
-  background: white;
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    background: white;
 }
 
 .demo-control-group select:disabled {
-  background: #f5f5f5;
-  color: #999;
+    background: #f5f5f5;
+    color: #999;
 }
 
 .demo-reset-button {
-  margin-top: 18px;
-  padding: 8px 18px;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: background-color 0.2s ease;
+    margin-top: 18px;
+    padding: 8px 18px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
 }
 
 .demo-reset-button:hover {
-  background-color: #45a049;
+    background-color: #45a049;
 }
 
 .demo-status {
-  margin-bottom: 24px;
-  padding: 12px 18px;
-  background: #e3f2fd;
-  border-radius: 7px;
-  border: 1.5px solid #2196f3;
-  font-size: 16px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
+    margin-bottom: 24px;
+    padding: 12px 18px;
+    background: #e3f2fd;
+    border-radius: 7px;
+    border: 1.5px solid #2196f3;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
 .demo-status-label {
-  font-weight: 700;
-  color: #1976d2;
+    font-weight: 700;
+    color: #1976d2;
 }
 
 .demo-status-value {
-  margin-left: 10px;
-  color: #37474f;
+    margin-left: 10px;
+    color: #37474f;
 }
 
 .demo-status-value strong {
-  color: #1976d2;
+    color: #1976d2;
 }
 
 .demo-status-empty {
-  margin-left: 10px;
-  color: #666;
+    margin-left: 10px;
+    color: #666;
 }
 
 .demo-treemap-container {
-  border: 1.5px solid #ddd;
-  border-radius: 10px;
-  padding: 24px 18px;
-  background: #fff;
-  box-shadow: 0 2px 10px rgba(33, 150, 243, 0.04);
+    border: 1.5px solid #ddd;
+    border-radius: 10px;
+    padding: 24px 18px;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(33, 150, 243, 0.04);
 }
 
 /* Responsive design */
 @media (max-width: 768px) {
-  .demo-content {
-    margin: 20px auto;
-    padding: 0 15px;
-  }
-  
-  .demo-title {
-    font-size: 24px;
-  }
-  
-  .demo-controls-row {
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  .demo-control-group {
-    min-width: auto;
-  }
+    .demo-content {
+        margin: 20px auto;
+        padding: 0 15px;
+    }
+
+    .demo-title {
+        font-size: 24px;
+    }
+
+    .demo-controls-row {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .demo-control-group {
+        min-width: auto;
+    }
 }

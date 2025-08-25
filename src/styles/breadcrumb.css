@@ -1,42 +1,42 @@
 .mondrian-breadcrumb {
-  padding: 8px 12px;
-  background-color: #fff;
-  border-bottom: 1px solid #e0e0e0;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  font-size: 12px;
-  font-family: Arial, sans-serif;
-  height: 32px;
-  box-sizing: border-box;
+    padding: 8px 12px;
+    background-color: #fff;
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+    font-family: Arial, sans-serif;
+    height: 32px;
+    box-sizing: border-box;
 }
 
 .mondrian-breadcrumb-item {
-  color: #333;
-  padding: 4px 8px;
-  border-radius: 3px;
-  border: 1px solid #ccc;
-  background-color: #f8f9fa;
-  display: inline-flex;
-  align-items: center;
-  height: 20px;
-  line-height: 1;
-  cursor: default;
+    color: #333;
+    padding: 4px 8px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    background-color: #f8f9fa;
+    display: inline-flex;
+    align-items: center;
+    height: 20px;
+    line-height: 1;
+    cursor: default;
 }
 
 .mondrian-breadcrumb-item.clickable {
-  cursor: pointer;
-  color: #666;
-  transition: all 0.2s ease;
+    cursor: pointer;
+    color: #666;
+    transition: all 0.2s ease;
 }
 
 .mondrian-breadcrumb-item.clickable:hover {
-  background-color: #e9ecef;
-  border-color: #adb5bd;
+    background-color: #e9ecef;
+    border-color: #adb5bd;
 }
 
 .mondrian-breadcrumb-separator {
-  color: #999;
-  font-size: 14px;
-  margin: 0 2px;
+    color: #999;
+    font-size: 14px;
+    margin: 0 2px;
 }
