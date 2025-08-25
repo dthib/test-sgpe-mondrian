@@ -1005,19 +1005,36 @@ function st(i, n) {
     let l = 0;
     switch (o.calculation_method) {
       case "difference_repartition":
-        l = ut(o, a, i.region, s);
+        l = ut(
+          o,
+          a,
+          i.region,
+          s
+        );
         break;
       case "transposition_directe":
-        l = ct(o, a, i.region, s);
+        l = ct(
+          o,
+          a,
+          i.region,
+          s
+        );
         break;
       case "sum_transposition":
-        l = lt(o, a, i, s);
+        l = lt(
+          o,
+          a,
+          i,
+          s
+        );
         break;
       case "national_repartition":
         l = ft(o, a, s);
         break;
       default:
-        console.error(`Unknown calculation method: ${o.calculation_method}`);
+        console.error(
+          `Unknown calculation method: ${o.calculation_method}`
+        );
     }
     console.log("levers:", s), s.length > 0 && r.sectors.push({
       name: o.name,
@@ -1074,7 +1091,9 @@ function lt(i, n, r, o) {
   for (const l of n.levers) {
     const f = l.regional_percentages[r.region];
     if (f === void 0) {
-      console.warn(`Region "${r.region}" not found for lever "${l.name}"`);
+      console.warn(
+        `Region "${r.region}" not found for lever "${l.name}"`
+      );
       continue;
     }
     const c = a * (f / 100);
@@ -1115,7 +1134,9 @@ const Y = "#74B9FF", pt = ({
   className: f = "",
   style: c = {}
 }) => {
-  const [_, g] = be([]), [R, O] = be("overview"), [M, x] = be(null), v = it, P = Wr(() => {
+  const [_, g] = be([]), [R, O] = be(
+    "overview"
+  ), [M, x] = be(null), v = it, P = Wr(() => {
     try {
       return x(null), st(i, n);
     } catch (h) {
@@ -1134,7 +1155,9 @@ const Y = "#74B9FF", pt = ({
       lever: p.name,
       contribution: p.contribution,
       color: p.color || v[h.name] || Y,
-      itemStyle: { color: p.color || v[h.name] || Y }
+      itemStyle: {
+        color: p.color || v[h.name] || Y
+      }
     }))
   })), [P, R, _, v]);
   Lr(() => {
@@ -1142,72 +1165,86 @@ const Y = "#74B9FF", pt = ({
       O("overview"), g([]);
       return;
     }
-    const h = P.sectors.find((p) => p.name === r);
-    h && (o ? (g([{
-      name: r,
-      value: Math.abs(h.total),
-      realValue: h.total,
-      children: h.levers.map((p) => ({
-        name: p.name,
-        value: Math.abs(p.contribution),
-        realValue: p.contribution,
-        sector: r,
-        lever: p.name,
-        contribution: p.contribution,
-        color: p.color || v[r] || Y,
-        selected: p.name === o
-      }))
-    }]), O("sector")) : (g([{
-      name: r,
-      value: Math.abs(h.total),
-      realValue: h.total,
-      children: h.levers.map((p) => ({
-        name: p.name,
-        value: Math.abs(p.contribution),
-        realValue: p.contribution,
-        sector: r,
-        lever: p.name,
-        contribution: p.contribution,
-        color: p.color || v[r] || Y
-      }))
-    }]), O("sector")));
+    const h = P.sectors.find(
+      (p) => p.name === r
+    );
+    h && (o ? (g([
+      {
+        name: r,
+        value: Math.abs(h.total),
+        realValue: h.total,
+        children: h.levers.map((p) => ({
+          name: p.name,
+          value: Math.abs(p.contribution),
+          realValue: p.contribution,
+          sector: r,
+          lever: p.name,
+          contribution: p.contribution,
+          color: p.color || v[r] || Y,
+          selected: p.name === o
+        }))
+      }
+    ]), O("sector")) : (g([
+      {
+        name: r,
+        value: Math.abs(h.total),
+        realValue: h.total,
+        children: h.levers.map((p) => ({
+          name: p.name,
+          value: Math.abs(p.contribution),
+          realValue: p.contribution,
+          sector: r,
+          lever: p.name,
+          contribution: p.contribution,
+          color: p.color || v[r] || Y
+        }))
+      }
+    ]), O("sector")));
   }, [r, o, P, v]);
   const D = ge(
     (h) => {
       if (h?.data?.sector && h?.data?.lever) {
-        const p = h.data.sector, $ = h.data.lever, T = h.data.contribution, m = P.sectors.find((C) => C.name === p);
+        const p = h.data.sector, $ = h.data.lever, T = h.data.contribution, m = P.sectors.find(
+          (C) => C.name === p
+        );
         if (!m) return;
-        g([{
-          name: p,
-          value: Math.abs(m.total),
-          realValue: m.total,
-          children: m.levers.map((C) => ({
-            name: C.name,
-            value: Math.abs(C.contribution),
-            realValue: C.contribution,
-            sector: p,
-            lever: C.name,
-            contribution: C.contribution,
-            color: C.color || v[p] || Y,
-            selected: C.name === $
-          }))
-        }]), O("sector"), a?.(p, $, T);
+        g([
+          {
+            name: p,
+            value: Math.abs(m.total),
+            realValue: m.total,
+            children: m.levers.map((C) => ({
+              name: C.name,
+              value: Math.abs(C.contribution),
+              realValue: C.contribution,
+              sector: p,
+              lever: C.name,
+              contribution: C.contribution,
+              color: C.color || v[p] || Y,
+              selected: C.name === $
+            }))
+          }
+        ]), O("sector"), a?.(p, $, T);
       } else if (h?.data?.name && !h?.data?.sector) {
-        const p = h.data.name, $ = P.sectors.find((T) => T.name === p);
-        g([{
-          name: p,
-          value: Math.abs($?.total ?? 0),
-          realValue: $?.total ?? 0,
-          children: $?.levers.map((T) => ({
-            name: T.name,
-            value: Math.abs(T.contribution),
-            realValue: T.contribution,
-            sector: p,
-            lever: T.name,
-            contribution: T.contribution,
-            color: T.color || v[p] || Y
-          })) ?? []
-        }]), O("sector"), s?.(p);
+        const p = h.data.name, $ = P.sectors.find(
+          (T) => T.name === p
+        );
+        g([
+          {
+            name: p,
+            value: Math.abs($?.total ?? 0),
+            realValue: $?.total ?? 0,
+            children: $?.levers.map((T) => ({
+              name: T.name,
+              value: Math.abs(T.contribution),
+              realValue: T.contribution,
+              sector: p,
+              lever: T.name,
+              contribution: T.contribution,
+              color: T.color || v[p] || Y
+            })) ?? []
+          }
+        ]), O("sector"), s?.(p);
       }
     },
     [P, a, s, v]
@@ -1227,7 +1264,12 @@ const Y = "#74B9FF", pt = ({
       } : { ...m, opacity: 0.5 });
     }
     let $ = h;
-    return h.length === 1 && h[0].children && h[0].children.some((T) => T.selected) && ($ = [{ ...h[0], children: p(h[0].children) }]), {
+    return h.length === 1 && h[0].children && h[0].children.some((T) => T.selected) && ($ = [
+      {
+        ...h[0],
+        children: p(h[0].children)
+      }
+    ]), {
       tooltip: {
         formatter: function(T) {
           const m = T.data;
@@ -1245,76 +1287,97 @@ const Y = "#74B9FF", pt = ({
         borderWidth: 1,
         textStyle: { color: "#333" }
       },
-      series: [{
-        type: "treemap",
-        data: $,
-        roam: !1,
-        nodeClick: "drillDown",
-        label: {
-          show: !0,
-          formatter: function(T) {
-            const m = T.data;
-            if (m.sector && m.lever) {
-              const B = m.realValue !== void 0 ? m.realValue : m.contribution;
-              return `${m.lever}
+      series: [
+        {
+          type: "treemap",
+          data: $,
+          roam: !1,
+          nodeClick: "drillDown",
+          label: {
+            show: !0,
+            formatter: function(T) {
+              const m = T.data;
+              if (m.sector && m.lever) {
+                const B = m.realValue !== void 0 ? m.realValue : m.contribution;
+                return `${m.lever}
 
 ${B.toFixed(1)} ktCO₂e`;
-            }
-            const C = m.realValue !== void 0 ? m.realValue : m.value;
-            return `${m.name}
+              }
+              const C = m.realValue !== void 0 ? m.realValue : m.value;
+              return `${m.name}
 
 ${C.toFixed(1)} ktCO₂e`;
+            },
+            fontSize: 12,
+            color: "#111"
           },
-          fontSize: 12,
-          color: "#111"
-        },
-        breadcrumb: {
-          show: !1
-          // hide breadcrumb by default temporary, to be implemented in the future
-        },
-        itemStyle: { borderColor: "#fff", borderWidth: 2 },
-        levels: [
-          { itemStyle: { borderColor: "#fff", borderWidth: 2, gapWidth: 2 } },
-          { itemStyle: { borderColor: "#fff", borderWidth: 1, gapWidth: 1 } }
-        ]
-      }]
+          breadcrumb: {
+            show: !1
+            // hide breadcrumb by default temporary, to be implemented in the future
+          },
+          itemStyle: { borderColor: "#fff", borderWidth: 2 },
+          levels: [
+            {
+              itemStyle: {
+                borderColor: "#fff",
+                borderWidth: 2,
+                gapWidth: 2
+              }
+            },
+            {
+              itemStyle: {
+                borderColor: "#fff",
+                borderWidth: 1,
+                gapWidth: 1
+              }
+            }
+          ]
+        }
+      ]
     };
   }, [V]);
   return M ? /* @__PURE__ */ I.jsxs("div", { className: "mondrian-error", children: [
     /* @__PURE__ */ I.jsx("h4", { children: "Data processing error" }),
     /* @__PURE__ */ I.jsx("p", { children: M }),
     /* @__PURE__ */ I.jsx("p", { className: "mondrian-error-hint", children: "Please verify the mapping between EPCI sectors and lever percentages." })
-  ] }) : /* @__PURE__ */ I.jsxs("div", { className: `mondrian-treemap mondrian-treemap-container ${f}`, style: c, children: [
-    (R === "sector" || r) && /* @__PURE__ */ I.jsxs("div", { className: "mondrian-breadcrumb", children: [
-      /* @__PURE__ */ I.jsx(
-        "span",
-        {
-          className: "mondrian-breadcrumb-item clickable",
-          onClick: () => {
-            O("overview"), g([]), l?.();
-          },
-          children: "Overview"
-        }
-      ),
-      /* @__PURE__ */ I.jsx("span", { className: "mondrian-breadcrumb-separator", children: "›" }),
-      /* @__PURE__ */ I.jsx("span", { className: "mondrian-breadcrumb-item", children: r }),
-      o && /* @__PURE__ */ I.jsxs(I.Fragment, { children: [
-        /* @__PURE__ */ I.jsx("span", { className: "mondrian-breadcrumb-separator", children: "›" }),
-        /* @__PURE__ */ I.jsx("span", { className: "mondrian-breadcrumb-item", children: o })
-      ] })
-    ] }),
-    /* @__PURE__ */ I.jsx(
-      at,
-      {
-        option: ue(),
-        className: `mondrian-treemap-chart ${R !== "overview" ? "with-breadcrumb" : ""}`,
-        style: { height: "100%", width: "100%" },
-        onEvents: {
-          click: D
-        }
-      }
-    )
-  ] });
+  ] }) : /* @__PURE__ */ I.jsxs(
+    "div",
+    {
+      className: `mondrian-treemap mondrian-treemap-container ${f}`,
+      style: c,
+      children: [
+        (R === "sector" || r) && /* @__PURE__ */ I.jsxs("div", { className: "mondrian-breadcrumb", children: [
+          /* @__PURE__ */ I.jsx(
+            "span",
+            {
+              className: "mondrian-breadcrumb-item clickable",
+              onClick: () => {
+                O("overview"), g([]), l?.();
+              },
+              children: "Overview"
+            }
+          ),
+          /* @__PURE__ */ I.jsx("span", { className: "mondrian-breadcrumb-separator", children: "›" }),
+          /* @__PURE__ */ I.jsx("span", { className: "mondrian-breadcrumb-item", children: r }),
+          o && /* @__PURE__ */ I.jsxs(I.Fragment, { children: [
+            /* @__PURE__ */ I.jsx("span", { className: "mondrian-breadcrumb-separator", children: "›" }),
+            /* @__PURE__ */ I.jsx("span", { className: "mondrian-breadcrumb-item", children: o })
+          ] })
+        ] }),
+        /* @__PURE__ */ I.jsx(
+          at,
+          {
+            option: ue(),
+            className: `mondrian-treemap-chart ${R !== "overview" ? "with-breadcrumb" : ""}`,
+            style: { height: "100%", width: "100%" },
+            onEvents: {
+              click: D
+            }
+          }
+        )
+      ]
+    }
+  );
 };
 export {
   vt as LEVER_COLORS,

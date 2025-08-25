@@ -4,7 +4,7 @@ export interface EpciData {
         name: string;
         value2019: number;
         target2030: number;
-        calculation_method: 'difference_repartition' | 'transposition_directe' | 'sum_transposition' | 'national_repartition';
+        calculation_method: "difference_repartition" | "transposition_directe" | "sum_transposition" | "national_repartition";
         source_sectors?: string[];
     }[];
 }
