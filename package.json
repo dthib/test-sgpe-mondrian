@@ -1,11 +1,19 @@
 {
   "name": "mondrian-treemap",
   "version": "1.0.0",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "./dist/mondrian-treemap.cjs.js",
+  "module": "./dist/mondrian-treemap.es.js",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/mondrian-treemap.es.js",
+      "require": "./dist/mondrian-treemap.cjs.js"
+    }
+  },
   "homepage": "https://gitlab.com/terristory/sgpe-mondrian",
   "repository": {
     "type": "git",
@@ -15,7 +23,7 @@
     "url": "https://gitlab.com/terristory/sgpe-mondrian/issues"
   },
   "scripts": {
-    "build": "tsc && vite build",
+    "build": "vite build && tsc -b",
     "build:demo": "vite build --config vite.demo.config.ts",
     "dev": "vite",
     "test": "jest",
@@ -61,6 +69,7 @@
     "react-dom": "^18.2.0",
     "ts-jest": "^29.1.0",
     "typescript": "^5.9.2",
-    "vite": "^7.1.1"
+    "vite": "^7.1.1",
+    "vite-plugin-dts": "^4.5.4"
   }
 }
