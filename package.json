@@ -3,7 +3,7 @@
   "version": "1.0.1",
   "type": "module",
   "main": "./dist/mondrian-treemap.cjs.js",
-  "module": "./dist/mondrian-treemap.es.js",
+  "module": "./dist/mondrian-treemap.cjs.js",
   "types": "./dist/index.d.ts",
   "files": [
     "dist"
@@ -11,7 +11,7 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/mondrian-treemap.es.js",
+      "import": "./dist/mondrian-treemap.cjs.js",
       "require": "./dist/mondrian-treemap.cjs.js"
     }
   },
