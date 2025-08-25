@@ -1,6 +1,7 @@
 {
   "name": "mondrian-treemap",
   "version": "1.0.1",
+  "type": "module",
   "main": "./dist/mondrian-treemap.cjs.js",
   "module": "./dist/mondrian-treemap.es.js",
   "types": "./dist/index.d.ts",
