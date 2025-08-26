@@ -16,14 +16,13 @@ export default defineConfig({
             formats: ["es", "cjs"],
         },
         rollupOptions: {
-            external: ["react", "react-dom", "echarts", "react/jsx-runtime", "react/jsx-dev-runtime"],
+            external: ["react", "react-dom", "echarts", "react/jsx-runtime"],
             output: {
                 globals: {
                     react: "React",
                     "react-dom": "ReactDOM",
                     echarts: "echarts",
-                    "react/jsx-runtime": "React",
-                    "react/jsx-dev-runtime": "React",
+                    "react/jsx-runtime": "react/jsx-runtime"
                 },
             },
         },
